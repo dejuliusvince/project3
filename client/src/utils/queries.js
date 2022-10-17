@@ -6,32 +6,32 @@ export const QUERY_USER = gql`
       _id
       username
       email
-      thoughts {
+      trades {
         _id
-        thoughtText
+        tradeText
         createdAt
       }
     }
   }
 `;
 
-export const QUERY_THOUGHTS = gql`
-  query getThoughts {
-    thoughts {
+export const QUERY_TRADES = gql`
+  query getTrades {
+    trades {
       _id
-      thoughtText
-      thoughtAuthor
+      tradeText
+      tradeAuthor
       createdAt
     }
   }
 `;
 
-export const QUERY_SINGLE_THOUGHT = gql`
-  query getSingleThought($thoughtId: ID!) {
-    thought(thoughtId: $thoughtId) {
+export const QUERY_SINGLE_TRADE = gql`
+  query getSingleTrade($tradeId: ID!) {
+    trade(tradeId: $tradeId) {
       _id
-      thoughtText
-      thoughtAuthor
+      tradeText
+      tradeAuthor
       createdAt
       comments {
         _id
@@ -49,10 +49,10 @@ export const QUERY_ME = gql`
       _id
       username
       email
-      thoughts {
+      trades {
         _id
-        thoughtText
-        thoughtAuthor
+        tradeText
+        tradeAuthor
         createdAt
       }
     }
