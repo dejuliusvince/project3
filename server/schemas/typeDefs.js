@@ -6,13 +6,13 @@ const typeDefs = gql`
     username: String
     email: String
     password: String
-    thoughts: [Thought]!
+    trades: [Trade]!
   }
 
-  type Thought {
+  type Trade {
     _id: ID
-    thoughtText: String
-    thoughtAuthor: String
+    tradeText: String
+    tradeAuthor: String
     createdAt: String
     comments: [Comment]!
   }
@@ -32,18 +32,18 @@ const typeDefs = gql`
   type Query {
     users: [User]
     user(username: String!): User
-    thoughts(username: String): [Thought]
-    thought(thoughtId: ID!): Thought
+    trades(username: String): [Trade]
+    trade(tradeId: ID!): Trade
     me: User
   }
 
   type Mutation {
     addUser(username: String!, email: String!, password: String!): Auth
     login(email: String!, password: String!): Auth
-    addThought(thoughtText: String!): Thought
-    addComment(thoughtId: ID!, commentText: String!): Thought
-    removeThought(thoughtId: ID!): Thought
-    removeComment(thoughtId: ID!, commentId: ID!): Thought
+    addTrade(tradeText: String!): Trade
+    addComment(tradeId: ID!, commentText: String!): Trade
+    removeTrade(tradeId: ID!): Trade
+    removeComment(tradeId: ID!, commentId: ID!): Trade
   }
 `;
 
