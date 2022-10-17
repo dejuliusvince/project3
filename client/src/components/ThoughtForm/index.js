@@ -61,7 +61,7 @@ const ThoughtForm = () => {
   };
 
   return (
-    <div>
+    <div className='bg-form'>
       <h3>Create your recipe here</h3>
 
       {Auth.loggedIn() ? (
