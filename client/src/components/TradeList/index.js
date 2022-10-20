@@ -15,8 +15,24 @@ const TradeList = ({
   }
 
   // create function that handles removing a trade
-
-
+//-------------------------------------------------------
+  // const TradeForm = () => {
+  //   const [tradeText, setTradeText] = useState('');
+  
+  //   const [characterCount, setCharacterCount] = useState(0);
+  
+  //   const [removeTrade, { error }] = useMutation(REMOVE_TRADE, {
+  //     update(cache, { data: { removeTrade } }) {
+  //       try {
+  //         const { trades } = cache.readQuery({ query: QUERY_TRADES });
+  
+  //         cache.writeQuery({
+  //           query: QUERY_TRADES,
+  //           data: { trades: [removeTrade, ...trades] },
+  //         });
+  //       } catch (e) {
+  //         console.error(e);
+  //       }
 
   return (
     <div>
@@ -41,7 +57,7 @@ const TradeList = ({
                     You shared this on {trade.createdAt}
                   </span>
                   
-                  {/* <Link to={`/remove/${item._id}`}>
+                  {/* <Link to={`/REMOVE_TRADE/${item._id}`}>
                   <button>X</button></Link> */}
                 </>
               )}
