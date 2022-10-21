@@ -1,8 +1,8 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { Link } from 'react-router-dom';
-// uncomment import underneath and link it to the button on line 38
 
-import { REMOVE_TRADE,  } from '../../utils/mutations';
+
+// import { REMOVE_TRADE,  } from '../../utils/mutations';
 
 const TradeList = ({
   trades,
@@ -14,7 +14,7 @@ const TradeList = ({
     return <h3>No Recipes Yet</h3>;
   }
 
-  // create function that handles removing a trade
+ 
 //-------------------------------------------------------
   // const TradeForm = () => {
   //   const [tradeText, setTradeText] = useState('');
@@ -33,6 +33,11 @@ const TradeList = ({
   //       } catch (e) {
   //         console.error(e);
   //       }
+
+  // if trade doesnt work try trades
+  // const deleteTrade = trade => {
+
+  // }
 
   return (
     <div>
@@ -57,8 +62,9 @@ const TradeList = ({
                     You shared this on {trade.createdAt}
                   </span>
                   
-                  {/* <Link to={`/REMOVE_TRADE/${item._id}`}>
-                  <button>X</button></Link> */}
+                  {/* <Link to={`/REMOVE_TRADE/${item._id}`}> */}
+                  {/* <button onClick={() => deleteTrade(trade)}>X</button> */}
+                  {/* </Link> */}
                 </>
               )}
             </h4>
