@@ -41,7 +41,7 @@ const CommentForm = ({ tradeId }) => {
 
   return (
     <div>
-      <h4>What are your trades on this recipe?</h4>
+      <h4>Add your comment</h4>
 
       {Auth.loggedIn() ? (
         <>
@@ -60,7 +60,7 @@ const CommentForm = ({ tradeId }) => {
             <div className="col-12 col-lg-9">
               <textarea
                 name="commentText"
-                placeholder="Add your comment..."
+                placeholder="Also be descriptive (i.e. I'll take 10 apples off your hands. Would you at least like a bunch of bananas in return?)"
                 value={commentText}
                 className="form-input w-100"
                 style={{ lineHeight: '1.5', resize: 'vertical' }}
@@ -70,14 +70,14 @@ const CommentForm = ({ tradeId }) => {
 
             <div className="col-12 col-lg-3">
               <button className="btn btn-primary btn-block py-3" type="submit">
-                Add Comment
+                Submit
               </button>
             </div>
           </form>
         </>
       ) : (
         <p>
-          You need to be logged in to share your trades. Please{' '}
+          You need to be logged in. Please{' '}
           <Link to="/login">login</Link> or <Link to="/signup">signup.</Link>
         </p>
       )}
