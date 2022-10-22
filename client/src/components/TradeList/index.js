@@ -1,5 +1,8 @@
+import { useMutation } from '@apollo/client';
 import React, {useState} from 'react';
 import { Link } from 'react-router-dom';
+import { REMOVE_TRADE } from '../../utils/mutations';
+import { QUERY_ME, QUERY_TRADES } from '../../utils/queries';
 
 
 // import { REMOVE_TRADE,  } from '../../utils/mutations';
@@ -10,6 +13,30 @@ const TradeList = ({
   showTitle = true,
   showUsername = true,
 }) => {
+  const [deleteTrade, { data, loading, error}]= useMutation(REMOVE_TRADE, {
+    update(cache, { data: { deleteTrade } }) {
+      try {
+        const { trades } = cache.readQuery({ query: QUERY_TRADES });
+
+        cache.writeQuery({
+          query: QUERY_TRADES,
+          data: { trades: trades.filter(oldTrade => oldTrade._id !== deleteTrade._id) },
+        });
+      } catch (e) {
+        console.error(e);
+      }
+
+      // update me object's cache
+      const { me } = cache.readQuery({ query: QUERY_ME });
+      cache.writeQuery({
+        query: QUERY_ME,
+        data: { me: { ...me, trades: me.trades.filter (oldTrade => oldTrade._id !== deleteTrade._id)} },
+      });
+    }
+  })
+  console.log (trades)
+
+
   if (!trades.length) {
     return <h3>No Recipes Yet</h3>;
   }
@@ -63,7 +90,7 @@ const TradeList = ({
                   </span>
                   
                   {/* <Link to={`/REMOVE_TRADE/${item._id}`}> */}
-                  {/* <button onClick={() => deleteTrade(trade)}>X</button> */}
+                  <button onClick={() => deleteTrade({variables: { tradeId: trade._id }})}>X</button>
                   {/* </Link> */}
                 </>
               )}
