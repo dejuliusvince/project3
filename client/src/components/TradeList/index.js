@@ -89,21 +89,25 @@ const TradeList = ({
                     You shared this recipe on {trade.createdAt}
                   </span>
                   
-                  {/* <Link to={`/REMOVE_TRADE/${item._id}`}> */}
-                  <button onClick={() => deleteTrade({variables: { tradeId: trade._id }})}>X</button>
-                  {/* </Link> */}
+                  
                 </>
               )}
             </h4>
             <div className="card-body bg-light p-2">
               <p>{trade.tradeText}</p>
             </div>
+
             <Link
               className="btn btn-primary btn-block btn-squared"
               to={`/trades/${trade._id}`}
             >
               Join the discussion on this recipe.
             </Link>
+            {/* <Link to={`/REMOVE_TRADE/${item._id}`}> */}
+            <div>
+                  <button className="btn btn-danger btn-block" onClick={() => deleteTrade({variables: { tradeId: trade._id }})}>Delete</button>
+                  {/* </Link> */}
+                  </div>
           </div>
         ))}
     </div>
