@@ -12,8 +12,6 @@ The following image shows the application's appearance and functionality:
 
    ![home-page](./Screenshot_homepage.png)
 
-   ![comments-page](./Screenshot_review_page.png)
-
 ## Features
 
 * React for the front end
