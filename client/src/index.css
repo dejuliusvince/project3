@@ -363,8 +363,15 @@ body {
   color: #1a1a1a;
 }
 
+@font-face{
+  font-family: "PEOPLE_BOOK_2";
+  src: local("PEOPLE_BOOK_2"),
+    url("./fonts/PEOPLE_BOOK_2.otf") format("opentype");
+  
+}
+
 h1{
-  font-family: 'Times New Roman', Times, serif;
+  font-family: 'PEOPLE_BOOK_2', Times, serif;
   margin: 0 0 0.5rem;
   line-height: 1.25;
 }
@@ -929,7 +936,7 @@ a:hover {
 }
 
 .bg-primary {
-  background-color: #322b92 !important;
+  background-color: #198a7f !important;
 }
 
 .bg-info {
