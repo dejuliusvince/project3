@@ -66,25 +66,21 @@ const TradeList = ({
                     You posted this on {trade.createdAt}
                   </span>
                   
-
+                  
                 </>
               )}
             </h4>
             <div className="card-body bg-light p-2">
               <p>{trade.tradeText}</p>
             </div>
+
             <Link
               className="btn btn-primary btn-block btn-squared"
               to={`/trades/${trade._id}`}
             >
               Respond if you’re interested.
             </Link>
-            <div>
-                  <button className="btn btn-danger btn-block" onClick={() => deleteTrade({variables: { tradeId: trade._id }})}>Delete</button>
-                  {/* </Link> */}
-                  </div>
           </div>
-          
         ))}
     </div>
   );

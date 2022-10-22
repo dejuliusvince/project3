@@ -363,13 +363,18 @@ body {
   color: #1a1a1a;
 }
 
-h1,
+h1{
+  font-family: 'Times New Roman', Times, serif;
+  margin: 0 0 0.5rem;
+  line-height: 1.25;
+}
+
 h2,
 h3,
 h4,
 h5,
 h6 {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   margin: 0 0 0.5rem;
   line-height: 1.25;
 }
