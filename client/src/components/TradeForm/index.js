@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useMutation } from '@apollo/client';
 
-import { ADD_TRADE } from '../../utils/mutations';
+import { ADD_TRADE,  } from '../../utils/mutations';
 import { QUERY_TRADES, QUERY_ME } from '../../utils/queries';
 
 import Auth from '../../utils/auth';
@@ -25,12 +25,17 @@ const TradeForm = () => {
         console.error(e);
       }
 
-      // update me object's cache
-      const { me } = cache.readQuery({ query: QUERY_ME });
-      cache.writeQuery({
-        query: QUERY_ME,
-        data: { me: { ...me, trades: [...me.trades, addTrade] } },
-      });
+      try {
+          // update me object's cache
+        const { me } = cache.readQuery({ query: QUERY_ME });
+        cache.writeQuery({
+          query: QUERY_ME,
+          data: { me: { ...me, trades: [...me.trades, addTrade] } },
+        });
+      }   catch (e) {
+        console.error(e);
+      }
+    
     },
   });
 
