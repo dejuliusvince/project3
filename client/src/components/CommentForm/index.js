@@ -41,7 +41,7 @@ const CommentForm = ({ tradeId }) => {
 
   return (
     <div>
-      <h4>What are your trades on this recipe?</h4>
+      <h4>What are you looking to share?</h4>
 
       {Auth.loggedIn() ? (
         <>

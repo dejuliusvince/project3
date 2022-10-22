@@ -25,13 +25,13 @@ const TradeList = ({
                 >
                   {trade.tradeAuthor} <br />
                   <span style={{ fontSize: '1rem' }}>
-                    shared this recipe {trade.createdAt}
+                    shared this {trade.createdAt}
                   </span>
                 </Link>
               ) : (
                 <>
                   <span style={{ fontSize: '1rem' }}>
-                    You shared this recipe on {trade.createdAt}
+                    You shared this on {trade.createdAt}
                   </span>
                 </>
               )}
@@ -43,7 +43,7 @@ const TradeList = ({
               className="btn btn-primary btn-block btn-squared"
               to={`/trades/${trade._id}`}
             >
-              Join the discussion on this recipe.
+              Respond if you’re interested.
             </Link>
           </div>
         ))}
