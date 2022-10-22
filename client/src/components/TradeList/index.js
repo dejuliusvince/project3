@@ -1,5 +1,11 @@
-import React from 'react';
+import { useMutation } from '@apollo/client';
+import React, {useState} from 'react';
 import { Link } from 'react-router-dom';
+import { REMOVE_TRADE } from '../../utils/mutations';
+import { QUERY_ME, QUERY_TRADES } from '../../utils/queries';
+
+
+// import { REMOVE_TRADE,  } from '../../utils/mutations';
 
 const TradeList = ({
   trades,
@@ -7,9 +13,58 @@ const TradeList = ({
   showTitle = true,
   showUsername = true,
 }) => {
+  const [deleteTrade, { data, loading, error}]= useMutation(REMOVE_TRADE, {
+    update(cache, { data: { removeTrade } }) {
+      try {
+        const { trades } = cache.readQuery({ query: QUERY_TRADES });
+
+        cache.writeQuery({
+          query: QUERY_TRADES,
+          data: { trades: trades.filter(oldTrade => oldTrade._id !== removeTrade._id) },
+        });
+      } catch (e) {
+        console.error(e);
+      }
+
+      // update me object's cache
+      const { me } = cache.readQuery({ query: QUERY_ME });
+      cache.writeQuery({
+        query: QUERY_ME,
+        data: { me: { ...me, trades: me.trades.filter (oldTrade => oldTrade._id !== removeTrade._id)} },
+      });
+    }
+  })
+  console.log (trades)
+
+
   if (!trades.length) {
     return <h3>No Recipes Yet</h3>;
   }
+
+ 
+//-------------------------------------------------------
+  // const TradeForm = () => {
+  //   const [tradeText, setTradeText] = useState('');
+  
+  //   const [characterCount, setCharacterCount] = useState(0);
+  
+  //   const [removeTrade, { error }] = useMutation(REMOVE_TRADE, {
+  //     update(cache, { data: { removeTrade } }) {
+  //       try {
+  //         const { trades } = cache.readQuery({ query: QUERY_TRADES });
+  
+  //         cache.writeQuery({
+  //           query: QUERY_TRADES,
+  //           data: { trades: [removeTrade, ...trades] },
+  //         });
+  //       } catch (e) {
+  //         console.error(e);
+  //       }
+
+  // if trade doesnt work try trades
+  // const deleteTrade = trade => {
+
+  // }
 
   return (
     <div>
@@ -33,6 +88,10 @@ const TradeList = ({
                   <span style={{ fontSize: '1rem' }}>
                     You shared this recipe on {trade.createdAt}
                   </span>
+                  
+                  {/* <Link to={`/REMOVE_TRADE/${item._id}`}> */}
+                  <button onClick={() => deleteTrade({variables: { tradeId: trade._id }})}>X</button>
+                  {/* </Link> */}
                 </>
               )}
             </h4>
