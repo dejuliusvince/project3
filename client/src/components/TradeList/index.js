@@ -14,13 +14,13 @@ const TradeList = ({
   showUsername = true,
 }) => {
   const [deleteTrade, { data, loading, error}]= useMutation(REMOVE_TRADE, {
-    update(cache, { data: { deleteTrade } }) {
+    update(cache, { data: { removeTrade } }) {
       try {
         const { trades } = cache.readQuery({ query: QUERY_TRADES });
 
         cache.writeQuery({
           query: QUERY_TRADES,
-          data: { trades: trades.filter(oldTrade => oldTrade._id !== deleteTrade._id) },
+          data: { trades: trades.filter(oldTrade => oldTrade._id !== removeTrade._id) },
         });
       } catch (e) {
         console.error(e);
@@ -30,7 +30,7 @@ const TradeList = ({
       const { me } = cache.readQuery({ query: QUERY_ME });
       cache.writeQuery({
         query: QUERY_ME,
-        data: { me: { ...me, trades: me.trades.filter (oldTrade => oldTrade._id !== deleteTrade._id)} },
+        data: { me: { ...me, trades: me.trades.filter (oldTrade => oldTrade._id !== removeTrade._id)} },
       });
     }
   })
