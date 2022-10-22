@@ -15,7 +15,7 @@ const Header = () => {
           <Link className="text-light" to="/">
             <h1 className="m-0">ReciPiece</h1>
           </Link>
-          <p className="m-0">Modular recipe creator, piece by piece.</p>
+          <p className="m-0">Good ingredients looking for good homes.</p>
         </div>
         <div>
           {Auth.loggedIn() ? (
@@ -24,7 +24,7 @@ const Header = () => {
                 {Auth.getProfile().data.username}'s profile
               </Link>
               <button className="btn btn-lg btn-light m-2" onClick={logout}>
-                Logout
+                logout
               </button>
             </>
           ) : (

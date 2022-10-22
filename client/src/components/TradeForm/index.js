@@ -67,7 +67,7 @@ const TradeForm = () => {
 
   return (
     <div>
-      <h3>What are you making?</h3>
+      <h3>What are you looking to share?</h3>
 
       {Auth.loggedIn() ? (
         <>
@@ -85,7 +85,7 @@ const TradeForm = () => {
             <div className="col-12 col-lg-9">
               <textarea
                 name="tradeText"
-                placeholder="Here's a new recipe..."
+                placeholder="Be descriptive (i.e. I have 50 apples to give away this week. Can meet near the Polaris area.)"
                 value={tradeText}
                 className="form-input w-100"
                 style={{ lineHeight: '1.5', resize: 'vertical' }}
@@ -95,7 +95,7 @@ const TradeForm = () => {
 
             <div className="col-12 col-lg-3">
               <button className="btn btn-primary btn-block py-3" type="submit">
-                Add Recipe
+                Submit
               </button>
             </div>
             {error && (
@@ -107,7 +107,7 @@ const TradeForm = () => {
         </>
       ) : (
         <p>
-          You need to be logged in to share your recipe. Please{' '}
+          You need to be logged in. Please{' '}
           <Link to="/login">login</Link> or <Link to="/signup">signup.</Link>
         </p>
       )}

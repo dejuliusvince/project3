@@ -38,33 +38,10 @@ const TradeList = ({
 
 
   if (!trades.length) {
-    return <h3>No Recipes Yet</h3>;
+    return <h3>No Posts Yet</h3>;
   }
 
- 
-//-------------------------------------------------------
-  // const TradeForm = () => {
-  //   const [tradeText, setTradeText] = useState('');
-  
-  //   const [characterCount, setCharacterCount] = useState(0);
-  
-  //   const [removeTrade, { error }] = useMutation(REMOVE_TRADE, {
-  //     update(cache, { data: { removeTrade } }) {
-  //       try {
-  //         const { trades } = cache.readQuery({ query: QUERY_TRADES });
-  
-  //         cache.writeQuery({
-  //           query: QUERY_TRADES,
-  //           data: { trades: [removeTrade, ...trades] },
-  //         });
-  //       } catch (e) {
-  //         console.error(e);
-  //       }
 
-  // if trade doesnt work try trades
-  // const deleteTrade = trade => {
-
-  // }
 
   return (
     <div>
@@ -80,18 +57,16 @@ const TradeList = ({
                 >
                   {trade.tradeAuthor} <br />
                   <span style={{ fontSize: '1rem' }}>
-                    shared this recipe {trade.createdAt}
+                  posted this {trade.createdAt}
                   </span>
                 </Link>
               ) : (
                 <>
                   <span style={{ fontSize: '1rem' }}>
-                    You shared this recipe on {trade.createdAt}
+                    You posted this on {trade.createdAt}
                   </span>
                   
-                  {/* <Link to={`/REMOVE_TRADE/${item._id}`}> */}
-                  <button onClick={() => deleteTrade({variables: { tradeId: trade._id }})}>X</button>
-                  {/* </Link> */}
+
                 </>
               )}
             </h4>
@@ -102,9 +77,14 @@ const TradeList = ({
               className="btn btn-primary btn-block btn-squared"
               to={`/trades/${trade._id}`}
             >
-              Join the discussion on this recipe.
+              Respond if you’re interested.
             </Link>
+            <div>
+                  <button className="btn btn-danger btn-block" onClick={() => deleteTrade({variables: { tradeId: trade._id }})}>Delete</button>
+                  {/* </Link> */}
+                  </div>
           </div>
+          
         ))}
     </div>
   );
