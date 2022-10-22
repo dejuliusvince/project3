@@ -60,7 +60,7 @@ const CommentForm = ({ tradeId }) => {
             <div className="col-12 col-lg-9">
               <textarea
                 name="commentText"
-                placeholder="Also be descriptive..."
+                placeholder="Also be descriptive (i.e. I'll take 10 apples off your hands. Would you at least like a bunch of bananas in return?)"
                 value={commentText}
                 className="form-input w-100"
                 style={{ lineHeight: '1.5', resize: 'vertical' }}

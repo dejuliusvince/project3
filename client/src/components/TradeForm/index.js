@@ -85,7 +85,7 @@ const TradeForm = () => {
             <div className="col-12 col-lg-9">
               <textarea
                 name="tradeText"
-                placeholder="Be descriptive..."
+                placeholder="Be descriptive (i.e. I have 50 apples to give away this week. Can meet near the Polaris area.)"
                 value={tradeText}
                 className="form-input w-100"
                 style={{ lineHeight: '1.5', resize: 'vertical' }}

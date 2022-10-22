@@ -28,7 +28,7 @@ const SingleTrade = () => {
       <h3 className="card-header bg-dark text-light p-2 m-0">
         {trade.tradeAuthor} <br />
         <span style={{ fontSize: '1rem' }}>
-          had this trade on {trade.createdAt}
+          posted on {trade.createdAt}
         </span>
       </h3>
       <div className="bg-light py-4">
