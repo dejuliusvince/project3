@@ -41,7 +41,7 @@ const CommentForm = ({ tradeId }) => {
 
   return (
     <div>
-      <h4>Add your comment:</h4>
+      <h4>Add your comment</h4>
 
       {Auth.loggedIn() ? (
         <>
