@@ -115,6 +115,17 @@ const resolvers = {
       }
       throw new AuthenticationError('You need to be logged in!');
     },
+    updateTrade: async(parent, {tradeId, tradeText}, context)=>{
+      if(context.user){
+        const trade = await Trade.findOneAndUpdate({
+          _id: tradeId
+        },{
+          $set:{tradeText}
+        },{ new: true })
+        return trade
+      }
+      throw new AuthenticationError('You need to be logged in!')
+    }
   },
 };
 

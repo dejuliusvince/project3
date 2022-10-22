@@ -5,6 +5,7 @@ import { REMOVE_TRADE } from '../../utils/mutations';
 import { QUERY_ME, QUERY_TRADES } from '../../utils/queries';
 
 
+
 // import { REMOVE_TRADE,  } from '../../utils/mutations';
 
 const TradeList = ({
@@ -13,7 +14,7 @@ const TradeList = ({
   showTitle = true,
   showUsername = true,
 }) => {
-  const [deleteTrade, { data, loading, error}]= useMutation(REMOVE_TRADE, {
+  let [deleteTrade, { data, loading, error}]= useMutation(REMOVE_TRADE, {
     update(cache, { data: { removeTrade } }) {
       try {
         const { trades } = cache.readQuery({ query: QUERY_TRADES });
@@ -35,6 +36,8 @@ const TradeList = ({
     }
   })
   console.log (trades)
+
+
 
 
   if (!trades.length) {
@@ -81,11 +84,13 @@ const TradeList = ({
               Respond if you’re interested.
             </Link>
             {/* <Link to={`/REMOVE_TRADE/${item._id}`}> */}
+            
             <div>
                   <button className="btn btn-danger btn-block" onClick={() => deleteTrade({variables: { tradeId: trade._id }})}>Delete</button>
                   {/* </Link> */}
                   </div>
           </div>
+          
           
         ))}
     </div>
