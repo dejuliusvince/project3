@@ -44,6 +44,7 @@ const typeDefs = gql`
     addComment(tradeId: ID!, commentText: String!): Trade
     removeTrade(tradeId: ID!): Trade
     removeComment(tradeId: ID!, commentId: ID!): Trade
+    updateTrade(tradeId: ID!, tradeText: String): Trade
   }
 `;
 

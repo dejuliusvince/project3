@@ -25,7 +25,7 @@ const Home = () => {
           ) : (
             <TradeList
               trades={trades}
-              title="Our Community Cookbook:"
+              title="Community thread:"
             />
           )}
         </div>
