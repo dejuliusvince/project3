@@ -6,11 +6,10 @@ Have you ever had excess food in your home that you wish you could trade or give
 
 ## Usage
 
-Website: 
-
 The following image shows the application's appearance and functionality:
 
-   ![home-page](./Screenshot_homepage.png)
+   ![home-page](./Image/login.png)
+
 
 ## Features
 
