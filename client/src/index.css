@@ -360,16 +360,29 @@ body {
     Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
     'Segoe UI Symbol';
   font-size: 16px;
-  color: #1a1a1a;
+  color: #198a7f;
+  background-color:rgb(244, 248, 247);
 }
 
-h1,
+@font-face{
+  font-family: "PEOPLE_BOOK_2";
+  src: local("PEOPLE_BOOK_2"),
+    url("./fonts/PEOPLE_BOOK_2.otf") format("opentype");
+  
+}
+
+h1{
+  font-family: 'PEOPLE_BOOK_2', Times, serif;
+  margin: 0 0 0.5rem;
+  line-height: 1.25;
+}
+
 h2,
 h3,
 h4,
 h5,
 h6 {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   margin: 0 0 0.5rem;
   line-height: 1.25;
 }
@@ -898,6 +911,10 @@ a:hover {
   color: #aeaeae !important;
 }
 
+.text-title {
+  color:rgb(109, 242, 193);
+}
+
 .text-light {
   color: #d9e9e8 !important;
 }
@@ -919,8 +936,12 @@ a:hover {
 }
 
 /* BACKGROUND UTILS */
+.bg-form {
+  background-color: #31e1bd !important;
+}
+
 .bg-primary {
-  background-color: #2d3e50 !important;
+  background-color: #198a7f !important;
 }
 
 .bg-info {
@@ -1012,12 +1033,12 @@ a:hover {
 }
 
 .btn.btn-primary {
-  background-color: #2d3e50;
+  background-color: #516fa5;
   color: #d9e9e8;
 }
 
 .btn.btn-primary:hover {
-  background-color: #57779a;
+  background-color: #198a7f;
 }
 
 .btn.btn-danger {
@@ -1030,21 +1051,21 @@ a:hover {
 }
 
 .btn.btn-info {
-  background-color: #1bbc9b;
+  background-color: #096241;
   color: #ffffff;
 }
 
 .btn.btn-info:hover {
-  background-color: #31e1bd;
+  background-color: #1b7aa2;
 }
 
 .btn.btn-light {
-  background-color: #d9e9e8;
-  color: #1a1a1a;
+  background-color: #c3774b;
+  color: #fcfbfb;
 }
 
 .btn.btn-light:hover {
-  background-color: #84b8b4;
+  background-color: #f1c778;
 }
 
 .btn.btn-dark {
@@ -1084,7 +1105,7 @@ a:hover {
 }
 
 .card {
-  border: 1px solid #1a1a1a;
+  
   margin-bottom: 1rem;
 }
 

@@ -39,6 +39,23 @@ export const ADD_TRADE = gql`
   }
 `;
 
+export const UPDATE_TRADE = gql`
+mutation UpdateTrade($tradeId: ID!, $tradeText: String) {
+  updateTrade(tradeId: $tradeId, tradeText: $tradeText) {
+    _id
+    tradeText
+    tradeAuthor
+    createdAt
+    comments {
+      _id
+      commentText
+      commentAuthor
+      createdAt
+    }
+  }
+}
+`;
+
 
 //------------------------------------//
 export const REMOVE_TRADE = gql`
