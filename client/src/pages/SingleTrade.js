@@ -48,7 +48,7 @@ const SingleTrade = () => {
   }
   return (
     <div className="my-3">
-      <h3 className="card-header bg-dark text-light p-2 m-0">
+      <h3 className="card-header bg-primary text-light p-2 m-0">
         {trade.tradeAuthor} <br />
         <span style={{ fontSize: '1rem' }}>
           posted on {trade.createdAt}
@@ -74,7 +74,7 @@ const SingleTrade = () => {
       <div className="my-5">
         <CommentList comments={trade.comments} />
       </div>
-      <div className="m-3 p-4" style={{ border: '1px dotted #1a1a1a' }}>
+      <div className="m-3 p-4 bg-light">
         <CommentForm tradeId={trade._id} />
       </div>
     </div>
