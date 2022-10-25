@@ -65,9 +65,9 @@ const TradeForm = () => {
     }
   };
 
-  return (
     <div>
       <h3>What are you looking to share?</h3>
+
 
       {Auth.loggedIn() ? (
         <>

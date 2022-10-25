@@ -1,17 +1,17 @@
 [
   
   {
-    "username": "David Thomas",
+    "username": "Mary Moody",
     "email": "dthomas@techfriends.dev",
     "password": "password08"
   },
   {
-    "username": "Donald Knuth",
+    "username": "Michael Meyers",
     "email": "dknuth@techfriends.dev",
     "password": "password09"
   },
   {
-    "username": "Lernantino",
+    "username": "Jack Johnson",
     "email": "lernantino@techfriends.dev",
     "password": "password10"
   }

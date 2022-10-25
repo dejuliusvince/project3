@@ -3,7 +3,6 @@ const { User, Trade } = require('../models');
 const userSeeds = require('./userSeeds.json');
 const tradeSeeds = require('./tradeSeeds.json');
 
-
 db.once('open', async () => {
   try {
     await Trade.deleteMany({});

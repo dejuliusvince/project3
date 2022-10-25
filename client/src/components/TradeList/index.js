@@ -83,6 +83,8 @@ const TradeList = ({
             >
               Respond if you’re interested.
             </Link>
+
+
             {/* <Link to={`/REMOVE_TRADE/${item._id}`}> */}
             
             <div>
@@ -92,6 +94,7 @@ const TradeList = ({
           </div>
           
           
+
         ))}
     </div>
   );
