@@ -1,0 +1,18 @@
+[
+  
+  {
+    "username": "Mary Moody",
+    "email": "dthomas@techfriends.dev",
+    "password": "password08"
+  },
+  {
+    "username": "Michael Meyers",
+    "email": "dknuth@techfriends.dev",
+    "password": "password09"
+  },
+  {
+    "username": "Jack Johnson",
+    "email": "lernantino@techfriends.dev",
+    "password": "password10"
+  }
+]
