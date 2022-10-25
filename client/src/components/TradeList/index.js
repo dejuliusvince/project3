@@ -83,9 +83,8 @@ const TradeList = ({
             >
               Respond if you’re interested.
             </Link>
-<<<<<<< HEAD
-          </div>
-=======
+
+
             {/* <Link to={`/REMOVE_TRADE/${item._id}`}> */}
             
             <div>
@@ -95,7 +94,7 @@ const TradeList = ({
           </div>
           
           
->>>>>>> 4b4098a (more styling, add update crud operation to singletrade page)
+
         ))}
     </div>
   );

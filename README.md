@@ -6,9 +6,12 @@ Have you ever had excess food in your home that you wish you could trade or give
 
 ## Usage
 
+
 The following image shows the application's appearance and functionality:
 
    ![home-page](./Image/login.png)
+
+
 
 
 ## Features
@@ -37,4 +40,6 @@ Annie Hoang (anniehoang.anh@gmail.com)
 
 Eric Shek (ericshek23@yahoo.com
 
+
 Vincent Dejulius (dejuliusvince@gmail.com)
+
